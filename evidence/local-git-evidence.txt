@@ -1,0 +1,176 @@
+$ git init -b main
+Initialized empty Git repository in C:/Amr/Amr/Studies/Course Notes/Fall 2026/Software engineering/Project/git-session1-KBLLL05/.git/
+
+$ git add .gitignore index.html style.css important.log
+
+$ git commit -m Initialize starter project and ignore local configuration
+[main (root-commit) ab536b2] Initialize starter project and ignore local configuration
+ 4 files changed, 23 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 important.log
+ create mode 100644 index.html
+ create mode 100644 style.css
+
+$ git add README.md
+
+$ git commit -m Document project purpose technologies and learning goals
+[main 673d31b] Document project purpose technologies and learning goals
+ 1 file changed, 23 insertions(+)
+ create mode 100644 README.md
+
+$ git status --short
+ M index.html
+ M style.css
+
+$ git diff
+diff --git a/index.html b/index.html
+index 3c91428..553d75a 100644
+--- a/index.html
++++ b/index.html
+@@ -1,6 +1,15 @@
+ <!DOCTYPE html>
+-<html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta name="viewport" content="width=device-width, initial-scale=1">
++    <title>Git Session 1 Practice</title>
++    <link rel="stylesheet" href="style.css">
++</head>
+ <body>
+-    <h1>Practice Project</h1>
++    <main>
++        <h1>Git Session 1 Practice</h1>
++        <p>A small website for practicing the Git workflow.</p>
++    </main>
+ </body>
+-</html>
+\ No newline at end of file
++</html>
+diff --git a/style.css b/style.css
+index 5102a52..e73339e 100644
+--- a/style.css
++++ b/style.css
+@@ -1,12 +1,16 @@
+ body {
+     font-family: Arial, sans-serif;
+     margin: 40px;
++    background: #f4f7fb;
++    color: #172b4d;
+ }
+ 
+ main {
+     max-width: 700px;
++    margin: 0 auto;
++    padding: 24px;
++    background: white;
+ }
+ 
+-h1 {
+-    margin-bottom: 10px;
+-}
+\ No newline at end of file
++h1 { margin-bottom: 10px; }
++a { color: #1756a9; }
+
+$ git add index.html
+
+$ git diff --cached
+diff --git a/index.html b/index.html
+index 3c91428..553d75a 100644
+--- a/index.html
++++ b/index.html
+@@ -1,6 +1,15 @@
+ <!DOCTYPE html>
+-<html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta name="viewport" content="width=device-width, initial-scale=1">
++    <title>Git Session 1 Practice</title>
++    <link rel="stylesheet" href="style.css">
++</head>
+ <body>
+-    <h1>Practice Project</h1>
++    <main>
++        <h1>Git Session 1 Practice</h1>
++        <p>A small website for practicing the Git workflow.</p>
++    </main>
+ </body>
+-</html>
+\ No newline at end of file
++</html>
+
+$ git status --short
+M  index.html
+ M style.css
+
+$ git commit -m Structure homepage and connect stylesheet
+[main 2dea208] Structure homepage and connect stylesheet
+ 1 file changed, 12 insertions(+), 3 deletions(-)
+
+$ git status --short
+ M style.css
+
+$ git add style.css
+
+$ git commit -m Improve page spacing colors and readability
+[main 13a8d16] Improve page spacing colors and readability
+ 1 file changed, 7 insertions(+), 3 deletions(-)
+
+$ git switch -c feature/about
+Switched to a new branch 'feature/about'
+
+$ git add about.html index.html
+
+$ git commit -m Add About page and homepage navigation
+[feature/about 38d8167] Add About page and homepage navigation
+ 2 files changed, 18 insertions(+)
+ create mode 100644 about.html
+
+$ git switch main
+Switched to branch 'main'
+
+$ git merge --no-ff feature/about -m Merge About feature into main
+Merge made by the 'ort' strategy.
+ about.html | 17 +++++++++++++++++
+ index.html |  1 +
+ 2 files changed, 18 insertions(+)
+ create mode 100644 about.html
+
+$ git add app.log
+The following paths are ignored by one of your .gitignore files:
+app.log
+hint: Use -f if you really want to add them.
+hint: Disable this message with "git config set advice.addIgnoredFile false"
+
+$ git check-ignore -v app.log debug.log local.env
+.gitignore:3:*.log	app.log
+.gitignore:3:*.log	debug.log
+.gitignore:1:local.env	local.env
+
+$ git check-ignore -v --no-index important.log
+.gitignore:4:!important.log	important.log
+
+$ git ls-files
+.gitignore
+README.md
+about.html
+important.log
+index.html
+style.css
+
+$ git status --short --ignored
+!! app.log
+!! debug.log
+!! local.env
+
+$ git log --oneline --graph --all
+*   a637cda Merge About feature into main
+|\  
+| * 38d8167 Add About page and homepage navigation
+|/  
+* 13a8d16 Improve page spacing colors and readability
+* 2dea208 Structure homepage and connect stylesheet
+* 673d31b Document project purpose technologies and learning goals
+* ab536b2 Initialize starter project and ignore local configuration
