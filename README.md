@@ -28,3 +28,5 @@ Practice logical commits, selective staging, feature branches, and fetch/pull.
 Logo extracted from the supplied Session 1 lecture slide 12.
 
 [Al Akhawayn University](https://www.aui.ma/)
+## Remote synchronization
+This sentence was added directly on GitHub to demonstrate fetching before pulling.
