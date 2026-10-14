@@ -1,0 +1,47 @@
+Before fetch: README blob fb039e60cc268b369921e877c90732a1b7d22874; HEAD a58110e6a84046ca5272a9ac67474c8e4a69d750
+GitHub editor commit: Document remote synchronization in GitHub editor
+git fetch origin succeeded: origin/main advanced from a58110e to f36e02a.
+$ git status -sb
+## main...origin/main [behind 1]
+
+$ git hash-object README.md
+fb039e60cc268b369921e877c90732a1b7d22874
+
+$ git rev-parse HEAD
+a58110e6a84046ca5272a9ac67474c8e4a69d750
+
+$ git rev-list --left-right --count HEAD...origin/main
+0	1
+
+$ git log --oneline HEAD..origin/main
+f36e02a Document remote synchronization in GitHub editor
+
+$ git diff --stat
+
+$ git diff HEAD..origin/main -- README.md
+diff --git a/README.md b/README.md
+index fb039e6..dea2e68 100644
+--- a/README.md
++++ b/README.md
+@@ -28,3 +28,5 @@ Practice logical commits, selective staging, feature branches, and fetch/pull.
+ Logo extracted from the supplied Session 1 lecture slide 12.
+ 
+ [Al Akhawayn University](https://www.aui.ma/)
++## Remote synchronization
++This sentence was added directly on GitHub to demonstrate fetching before pulling.
+
+$ git pull --ff-only origin main
+Updating a58110e..f36e02a
+Fast-forward
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+$ git status -sb
+## main...origin/main
+?? evidence/github-readme.png
+?? evidence/remote-git-evidence.txt
+$ git rev-list --left-right --count HEAD...origin/main
+0	0
+$ git hash-object README.md
+dea2e68356f934f2238f7315ba315acd18b15a32
+$ git log -1 --oneline
+f36e02a Document remote synchronization in GitHub editor
