@@ -26,7 +26,7 @@ An empty public GitHub repository was created, connected using git remote add or
 
 ## 6. Fair Use of AI
 
-I used AI to check whether there were any improvements I could make to my report.
+I used AI assistance while preparing the project and report. My requests focused on the assignment requirements, Git workflow, and possible improvements to the explanations. Suggestions were incorporated and adjusted to match the project details. The resulting work was checked against the assignment instructions and the recorded Git status, diffs, and commit history.
 
 ## 7. Sources & Reflection
 
