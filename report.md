@@ -26,7 +26,7 @@ An empty public GitHub repository was created, connected using git remote add or
 
 ## 6. Fair Use of AI
 
-I used Codex AI extensively to inspect the supplied assignment, prepare the starter-based website and README, execute the Git workflow, collect evidence, and draft the report. My initial prompt asked it to complete the assignment using the provided documents; follow-up answers supplied my identity, confirmed GitHub sign-in, and selected the AUI logo from the slides. The generated project structure, selective-staging sequence, and About feature were retained, while the draft identity fields and pending remote section were replaced with confirmed details and actual results. Before inclusion, the assistant checked status and staged/unstaged diffs, verified ignore rules and tracked files, inspected the branch graph, compared hashes before and after fetch, and confirmed pull synchronization. These checks were performed by the assistant; this report does not claim independent manual execution or verification by me.
+I used AI to check whether there were any improvements I could make to my report.
 
 ## 7. Sources & Reflection
 
